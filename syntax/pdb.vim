@@ -71,7 +71,7 @@ hi def link Connect_1  Float
 hi def link Connect_2  Function
 hi def link Connect_3  Float
 hi def link Connect_4  Function
-hi def link Connect_e  Float
+hi def link Connect_e  Conditional
 
 
 " ===== Others =====
