@@ -2,7 +2,9 @@
 "
 " Author: mumeiyamibito (http://www3.to/mumeiyamibito)
 " Modified By: Liang-Bo Wang (liang-bo.wang@wustl.edu)
-" Last Change: 2015/11/07
+" Change: 2015/11/07
+" Modified By: hdoi (dddoooiii888@gmail.com)
+" Last Change: 2025/06/20
 "
 " The syntax (column) was referred from http://bit.ly/1RC9GtI
 "
@@ -34,22 +36,22 @@ syn match Charge     /\%>78v.*\%81v/ contained
 
 
 " ***** Color *****
-hi R_ATOM     ctermfg=lightred guifg=lightred
-hi def link   R_HETATM R_ATOM
-hi Serial     ctermfg=red         guifg=red
-hi AtomName   ctermfg=yellow      guifg=yellow
-hi AltLoc     ctermfg=white       guifg=white
-hi ResName    ctermfg=blue        guifg=blue
-hi ChainID    ctermfg=darkblue    guifg=darkblue
-hi ResSeq     ctermfg=cyan        guifg=cyan
-hi iCode      ctermfg=white       guifg=white
-hi CoordX     ctermfg=lightgreen  guifg=lightgreen
-hi CoordY     ctermfg=green       guifg=green
-hi CoordZ     ctermfg=darkgreen   guifg=darkgreen
-hi Occupancy  ctermfg=magenta     guifg=magenta
-hi TempFactor ctermfg=darkmagenta guifg=darkmagenta
-hi Element    ctermfg=yellow      guifg=yellow
-hi Charge     ctermfg=green       guifg=green
+hi def link R_ATOM   Character
+hi def link R_HETATM Character
+hi def link Serial   Boolean
+hi def link AtomName Function
+hi def link AltLoc   Debug
+hi def link ResName  Macro
+hi def link ChainID  String
+hi def link ResSeq   Boolean
+hi def link iCode    Debug
+hi def link CoordX   Float
+hi def link CoordY   Function
+hi def link CoordZ   Float
+hi def link Occupancy  Label
+hi def link TempFactor Identifier
+hi def link Element    Conditional
+hi def link Charge     Define
 
 
 " ===== CONECT =====
@@ -63,13 +65,13 @@ syn match Connect_4  /\%>26v.*\%32v/ contained nextgroup=Connect_e
 syn match Connect_e  /\%>31v\s*\S\+\s*$/ contained
 
 " ***** color *****
-hi R_CONECT   ctermfg=lightgreen guifg=lightgreen
-hi Connect_s  ctermfg=red        guifg=red
-hi Connect_1  ctermfg=yellow     guifg=yellow
-hi Connect_2  ctermfg=green      guifg=green
-hi Connect_3  ctermfg=cyan       guifg=cyan
-hi Connect_4  ctermfg=blue       guifg=blue
-hi Connect_e  ctermfg=white      guifg=white ctermbg=red guibg=red
+hi def link R_CONECT   Character
+hi def link Connect_s  Define
+hi def link Connect_1  Float
+hi def link Connect_2  Function
+hi def link Connect_3  Float
+hi def link Connect_4  Function
+hi def link Connect_e  Conditional
 
 
 " ===== Others =====
@@ -105,11 +107,11 @@ syn match R_SCALE  /^SCALE.*$/
 syn match R_MASTER /^MASTER.*$/
 
 " ***** color *****
-hi R_TER ctermfg=black guifg=black ctermbg=yellow guibg=yellow
+hi def link R_TER    Special
 hi def link R_MODEL  R_TER
 hi def link R_ENDMDL R_TER
-hi R_END ctermfg=white guifg=white ctermbg=darkblue guibg=darkblue
-hi R_Other ctermfg=darkgray guifg=darkgray
+hi def link R_END    Special
+hi def link R_Other  Define
 hi def link R_HEADER R_Other
 hi def link R_TITLE  R_Other
 hi def link R_SOURCE R_Other
